@@ -31,7 +31,7 @@ jobs:
             --build-arg=NODE_VERSION=18.20.2 \
             --build-arg=APPS_JSON_BASE64=$APPS_JSON_BASE64 \
             --tag=ghcr.io/star10rd/erpnext_docker/erpnext:latest \
-            --file=igimages/custom/Containerfile .
+            --file=images/custom/Containerfile .
       
       - name: Push the image into GHCR
         run: docker push ghcr.io/star10rd/erpnext_docker/erpnext:latest
