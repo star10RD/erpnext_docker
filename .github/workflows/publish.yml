@@ -22,11 +22,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
         
-      - name: Export custom apps list into environment
-        run: export APPS_JSON_BASE64=$(base64 -w 0 apps.json)
-      
       - name: Build the Docker Image
         run: |
+          export APPS_JSON_BASE64=$(base64 -w 0 apps.json)
           docker build \
             --build-arg=FRAPPE_PATH=https://github.com/frappe/frappe \
             --build-arg=FRAPPE_BRANCH=version-15 \
