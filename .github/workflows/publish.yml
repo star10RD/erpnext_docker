@@ -38,7 +38,7 @@ jobs:
           push: true
           tags: ghcr.io/star10rd/erpnext_docker/erpnext:latest
           context: .
-          file: ./images/custom/ContainerFile
+          file: ./images/custom/Containerfile
           platforms: linux/amd64,linux/arm64
           build-args: |
             FRAPPE_PATH=https://github.com/frappe/frappe
